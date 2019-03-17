@@ -18,6 +18,14 @@ prop.table(table(gender))
 dataiitb = data.frame(rollno, sname, gender, age, course, marks1, marks2, passfail)
 head(dataiitb)
 write.csv(dataiitb, './data/dataiitb.csv') #subdirectory data in current repository
+data2= read.csv('https://raw.githubusercontent.com/dupadhyaya/hheanalytics/master/data/dataiitb.csv')
+head(data2)
+install.packages('dplyr')
+library(dplyr)
+data2 %>% group_by(gender) %>% summarise(meanM1=mean(marks1),meanM2=mean(marks2))
+sum1<-data2 %>% group_by(gender,course)%>% summarise (meanM1=mean(marks1),minA=min(age),sdA=sd(age))%>%arrange(gender,desc(sdA))
+sum1
+
 #find properties of data like 
 #first few and last few rows
 #dimensions
