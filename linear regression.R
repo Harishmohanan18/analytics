@@ -1,3 +1,5 @@
+#linear regression
+
 women
 names(women)
 str(women)
