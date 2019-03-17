@@ -17,3 +17,4 @@ model1$centers
 model2
 model2$cluster
 cbind(mtcars[c('mpg','wt')],model2$cluster)
+
